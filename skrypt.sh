@@ -58,3 +58,9 @@ if [[ $1 == "--logs" ]]; then
         echo "Data: $(date)" >> "$filename"
     done
 fi
+
+if [[ $1 == "--help" ]]; then
+    echo "--date        wyświetla dzisiejszą datę"
+    echo "--logs [n]    tworzy n plików logx.txt"
+    echo "--help        pokazuje tę pomoc"
+fi
