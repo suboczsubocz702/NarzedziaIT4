@@ -15,6 +15,11 @@ create_logs() {
     done
 }
 
+# Function to initialize repository and set PATH
+init_repo() {
+    git clone <URL-repozytorium> .
+    export PATH=$PATH:$PWD
+    echo "Repository cloned and PATH updated."
 # Main script logic
 case "$1" in
     --date)
@@ -34,7 +39,6 @@ case "$1" in
         echo "Unknown option. Use --help for available options."
         exit 1
         ;;
-esac
 
 # Function to display help
 show_help() {
@@ -46,3 +50,5 @@ show_help() {
     echo "--error N, -e N Create N error files"
     echo "--init          Clone repository and update PATH"
     echo "--help, -h      Display this help message"
+
+esac
