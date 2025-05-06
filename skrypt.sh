@@ -39,7 +39,16 @@ case "$1" in
         echo "Unknown option. Use --help for available options."
         exit 1
         ;;
-
+# Function to create error files
+create_errors() {
+    local num_files=$1
+    mkdir -p error$num_files
+    for ((i=1; i<=num_files; i++)); do
+        echo "File: error$i.txt" > error$num_files/error$i.txt
+        echo "Created by: script.sh" >> error$num_files/error$i.txt
+        echo "Date: $(date)" >> error$num_files/error$i.txt
+    done
+}
 # Function to display help
 show_help() {
     echo "Available options:"
