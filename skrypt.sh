@@ -15,15 +15,6 @@ create_logs() {
     done
 }
 
-# Function to display help
-show_help() {
-    echo "Available options:"
-    echo "--date    Display the current date"
-    echo "--logs    Create 100 log files (log1.txt to log100.txt)"
-    echo "--logs N  Create N log files"
-    echo "--help    Display this help message"
-}
-
 # Main script logic
 case "$1" in
     --date)
@@ -44,6 +35,14 @@ case "$1" in
         exit 1
         ;;
 esac
-    echo "--logs [n]    tworzy n plików logx.txt"
-    echo "--help        pokazuje tę pomoc"
-fi
+
+# Function to display help
+show_help() {
+    echo "Available options:"
+    echo "--date, -d      Display the current date"
+    echo "--logs, -l      Create 100 log files (log1.txt to log100.txt)"
+    echo "--logs N, -l N  Create N log files"
+    echo "--error, -e     Create 100 error files (error1.txt to error100.txt)"
+    echo "--error N, -e N Create N error files"
+    echo "--init          Clone repository and update PATH"
+    echo "--help, -h      Display this help message"
